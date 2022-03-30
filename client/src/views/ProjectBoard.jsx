@@ -7,7 +7,7 @@ const ProjectBoard = () => {
     return (
         <div className={style.projectBoard}>
             <div className={style.navBar}>
-                <h1>Project Name</h1>
+                <h1>Project Name Testing Testing</h1>
                 <button>Add a List</button>
             </div>
             <div className={style.columnsContainer}>
