@@ -2,11 +2,13 @@ import "./App.css";
 import ProjectBoard from "./views/ProjectBoard";
 
 function App() {
+
     return (
         <div className="App">
-            <h1>We re finally getting this</h1>
-            <h1>Changing app.js within feature branch</h1>
+            <h1>Testing testing</h1>
+            <h2>trying this again</h2>
             <ProjectBoard />
+            <h3>Ken adding a test</h3>
         </div>
     );
 }
