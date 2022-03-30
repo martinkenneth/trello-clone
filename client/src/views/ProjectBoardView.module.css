@@ -1,0 +1,33 @@
+
+.columnsContainer {
+    display: flex;
+    gap: 25px;
+}
+
+.projectBoard {
+    padding: 10px;
+}
+
+h1 {
+    text-align: left;
+}
+
+.navBar {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+
+button {
+    font-size: 14pt;
+    background-color: #3498db;
+    border-radius: 3px;
+    border: none;
+    color: white;
+}
+button:hover {
+    background-color: #2879b0;
+}
+button:active {
+    border: black solid thin;
+}

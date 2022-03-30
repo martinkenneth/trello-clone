@@ -1,0 +1,22 @@
+
+.listColumn {
+    border: solid black medium;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.addButton {
+    display: flex;
+    align-items: flex-start;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+.addButton:hover {
+    background-color: lightgray;
+    border-radius: 3px;
+}
+
+.addButton:active {
+    background-color: gray;
+}
