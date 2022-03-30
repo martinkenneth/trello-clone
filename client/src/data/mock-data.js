@@ -1,4 +1,6 @@
 
+const projName = 'Project Name';
+
 const items = [
     {
         title: 'As a user, I want so that',
@@ -16,6 +18,13 @@ const items = [
     },
     {
         title: 'As a user, I want another thing so that this thing',
+        desciption: 'make a header that does something',
+        timeToComplete: 3,
+        timeMetric : 'days',
+        list: "Doing"
+    },
+    {
+        title: 'As a user, I blah blah blah',
         desciption: 'make a header that does something',
         timeToComplete: 3,
         timeMetric : 'days',
@@ -42,4 +51,4 @@ const lists = [
     },
 ]
 
-export {items, lists};
+export {projName, items, lists};

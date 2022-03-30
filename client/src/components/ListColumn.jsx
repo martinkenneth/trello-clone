@@ -1,10 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import style from './ListColumnComponent.module.css';
 import { items } from '../data/mock-data';
 import Item from './Item';
+import AddTaskForm from './AddTaskForm';
 
 const ListColumn = (props) => {
     const {listTitle} = props;
+
+    const [addTask, setAddTask] = useState(false);
+
+    const handleAddTask = () => {
+        setAddTask(true);
+    }
+
     return (
         <div className={style.listColumn}>
             <h3>{listTitle}</h3>
@@ -13,9 +21,12 @@ const ListColumn = (props) => {
                     <Item key={idx} item={oneItem}/>
                 )
             })}
-            <div className={style.addButton}>
+            {addTask ? 
+            <AddTaskForm setAddTask={setAddTask}/>:
+            <div className={style.addButton} onClick={handleAddTask}>
                 <p>+ Add a task</p> 
             </div>
+            }
         </div>
     )
 }
