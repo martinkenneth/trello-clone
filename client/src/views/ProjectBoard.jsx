@@ -1,21 +1,9 @@
-<<<<<<< HEAD
 import React, { useState } from "react";
-import NavigationBar from "../components/NavigationBar";
 import ListColumn from "../components/ListColumn";
-import AddListForm from "../components/AddListForm";
-import style from "./ProjectBoardView.module.css";
 import { projName, lists } from "../data/mock-data";
-=======
-import React, {useState} from 'react'
-import ListColumn from '../components/ListColumn';
-import { projName, lists } from '../data/mock-data';
-import style from './ProjectBoardView.module.css';
-import AddListForm from '../components/AddListForm';
-import EditOne from './EditOne';
-<<<<<<< HEAD
->>>>>>> ac16b7ebd70a0d9408d7cb97b8342c836a4198ab
-=======
->>>>>>> ac16b7ebd70a0d9408d7cb97b8342c836a4198ab
+import style from "./ProjectBoardView.module.css";
+import AddListForm from "../components/AddListForm";
+import EditOne from "./EditOne";
 
 const ProjectBoard = () => {
     const [addList, setAddList] = useState(false);
@@ -28,23 +16,20 @@ const ProjectBoard = () => {
     //state var record idx or id
     //axios
 
-    //state var record idx or id
-    //axios
-
     return (
         <div className={style.projectBoard}>
-            {/* <div className={style.navBar}>
+            <div className={style.navBar}>
                 <h1>{projName}</h1>
-            </div> */}
+            </div>
             <div className={style.columnsContainer}>
                 {lists.map((list, idx) => {
-<<<<<<< HEAD
-                    return <ListColumn key={idx} listTitle={list.title} />;
-=======
                     return (
-                        <ListColumn key={idx} listTitle={list.title} setShowId={setShowId}/>
-                    )
->>>>>>> ac16b7ebd70a0d9408d7cb97b8342c836a4198ab
+                        <ListColumn
+                            key={idx}
+                            listTitle={list.title}
+                            setShowId={setShowId}
+                        />
+                    );
                 })}
 
                 {addList ? (
@@ -53,8 +38,7 @@ const ProjectBoard = () => {
                     <button onClick={handleAddList}>Add a List</button>
                 )}
             </div>
-            {showId > -1 && <EditOne indexKey={showId} setShowId={setShowId}/>}
-            
+            {showId > -1 && <EditOne indexKey={showId} setShowId={setShowId} />}
         </div>
     );
 };
