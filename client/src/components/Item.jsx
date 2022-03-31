@@ -4,7 +4,7 @@ import style from "./Item.module.css";
 const Item = (props) => {
     const { item } = props;
     return (
-        <div className={style.item}>
+        <div className={style.item} onClick={props.onClick}>
             <p>{item.title}</p>
         </div>
     );
