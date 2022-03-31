@@ -4,6 +4,7 @@ import { projName, lists } from "../data/mock-data";
 import style from "./ProjectBoardView.module.css";
 import AddListForm from "../components/AddListForm";
 import EditOne from "./EditOne";
+import plus from "../assets/plus-icon.png";
 
 const ProjectBoard = () => {
     const [addList, setAddList] = useState(false);
@@ -18,9 +19,6 @@ const ProjectBoard = () => {
 
     return (
         <div className={style.projectBoard}>
-            <div className={style.navBar}>
-                <h1>{projName}</h1>
-            </div>
             <div className={style.columnsContainer}>
                 {lists.map((list, idx) => {
                     return (
@@ -35,7 +33,10 @@ const ProjectBoard = () => {
                 {addList ? (
                     <AddListForm setAddList={setAddList} />
                 ) : (
-                    <button onClick={handleAddList}>Add a List</button>
+                    <button onClick={handleAddList}>
+                        <img src={plus} alt="" />
+                        <p>Add List</p>
+                    </button>
                 )}
             </div>
             {showId > -1 && <EditOne indexKey={showId} setShowId={setShowId} />}
