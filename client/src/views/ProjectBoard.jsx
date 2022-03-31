@@ -12,6 +12,9 @@ import { projName, lists } from '../data/mock-data';
 import style from './ProjectBoardView.module.css';
 import AddListForm from '../components/AddListForm';
 import EditOne from './EditOne';
+<<<<<<< HEAD
+>>>>>>> ac16b7ebd70a0d9408d7cb97b8342c836a4198ab
+=======
 >>>>>>> ac16b7ebd70a0d9408d7cb97b8342c836a4198ab
 
 const ProjectBoard = () => {
@@ -21,6 +24,9 @@ const ProjectBoard = () => {
     const handleAddList = () => {
         setAddList(true);
     };
+
+    //state var record idx or id
+    //axios
 
     //state var record idx or id
     //axios

@@ -6,7 +6,11 @@ import AddTaskForm from "./AddTaskForm";
 
 const ListColumn = (props) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
     const { listTitle } = props;
+=======
+    const {listTitle, setShowId} = props;
+>>>>>>> ac16b7ebd70a0d9408d7cb97b8342c836a4198ab
 =======
     const {listTitle, setShowId} = props;
 >>>>>>> ac16b7ebd70a0d9408d7cb97b8342c836a4198ab
@@ -23,11 +27,15 @@ const ListColumn = (props) => {
     const handleClickTask = (id) => {
         setShowId(id)
     }
+<<<<<<< HEAD
+>>>>>>> ac16b7ebd70a0d9408d7cb97b8342c836a4198ab
+=======
 >>>>>>> ac16b7ebd70a0d9408d7cb97b8342c836a4198ab
 
     return (
         <div className={style.listColumn}>
             <h3>{listTitle}</h3>
+<<<<<<< HEAD
 <<<<<<< HEAD
             {items
                 .filter((oneItem) => oneItem.list === listTitle)
@@ -42,6 +50,8 @@ const ListColumn = (props) => {
                 </div>
             )}
 =======
+=======
+>>>>>>> ac16b7ebd70a0d9408d7cb97b8342c836a4198ab
             {items.filter((oneItem) => oneItem.list === listTitle).map((oneItem) => {
                 return (
                     <Item key={oneItem.id} item={oneItem} onClick={() => handleClickTask(oneItem.id)}/>
