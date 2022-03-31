@@ -32,6 +32,7 @@
 }
 
 .columnsContainer > button:hover {
+    transition: 0.5s ease-in-out;
     background-color: #85d689;
     color: #2b2b2b;
 }
