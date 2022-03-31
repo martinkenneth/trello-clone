@@ -1,43 +1,41 @@
 .projectBoard {
     /* width: 80vw; */
     /* background-color: #3498db; */
-    margin: 40px 0px 0px 40px;
+    margin: 40px 0px 40px 40px;
     /* padding: 10px; */
 }
 
 .columnsContainer {
     display: flex;
-    /* justify-content: flex-start; */
-    /* height: auto; */
+    height: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px;
     gap: 25px;
 }
 
-/* h1 {
-    text-align: left;
-} */
+.columnsContainer > button {
+    cursor: pointer;
+    min-width: 310px;
+    height: 40px;
+    font-size: 14pt;
+    background-color: #ffffff;
+    font-weight: 500;
+    border-radius: 0.4rem;
+    border: 2px solid #2b2b2b;
+    color: #2b2b2b;
+    box-shadow: 3px 3px 5px #525252;
 
-/* .navBar {
     display: flex;
     align-items: center;
-    gap: 100px;
-} */
+    justify-content: center;
+}
 
-.columnsContainer button {
-    /* height: min-content; */
-    width: 310px;
-    height: 33px;
-    /* width: 310px; */
-    /* padding: 10px; */
-    font-size: 14pt;
-    background-color: #3498db;
-    border-radius: 3px;
-    border: none;
-    color: white;
-    /* width: 100% */
+.columnsContainer > button:hover {
+    background-color: #85d689;
+    color: #2b2b2b;
 }
-.columnsContainer button:hover {
-    background-color: #2879b0;
-}
-.columnsContainer button:active {
-    border: black solid thin;
+
+.columnsContainer > button img {
+    width: 30px;
 }
