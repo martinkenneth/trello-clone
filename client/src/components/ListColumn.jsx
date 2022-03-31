@@ -5,20 +5,24 @@ import Item from './Item';
 import AddTaskForm from './AddTaskForm';
 
 const ListColumn = (props) => {
-    const {listTitle} = props;
+    const {listTitle, setShowId} = props;
 
     const [addTask, setAddTask] = useState(false);
 
     const handleAddTask = () => {
         setAddTask(true);
     }
+    
+    const handleClickTask = (id) => {
+        setShowId(id)
+    }
 
     return (
         <div className={style.listColumn}>
             <h3>{listTitle}</h3>
-            {items.filter((oneItem) => oneItem.list === listTitle).map((oneItem, idx) => {
+            {items.filter((oneItem) => oneItem.list === listTitle).map((oneItem) => {
                 return (
-                    <Item key={idx} item={oneItem}/>
+                    <Item key={oneItem.id} item={oneItem} onClick={() => handleClickTask(oneItem.id)}/>
                 )
             })}
             {addTask ? 
