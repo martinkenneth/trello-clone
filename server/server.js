@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const PORT = 8000;
-const DB = "test";
+const DB = "trella_db";
 
 /*===========================================================================
     Middleware 
@@ -21,7 +21,8 @@ require("./config/mongoose.config")(DB);
 /*===========================================================================
     Import Server Routes
 ===========================================================================*/
-/* --- User Routes --- */
+// This will connect out routes
+require('./routes/Item.routes')(app);
 
 // Test to see if server is running upon setup...
 app.listen(PORT, () => console.log("The server is all fired up on port 8000"));
