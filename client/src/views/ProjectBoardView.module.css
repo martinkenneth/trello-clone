@@ -1,24 +1,33 @@
+.projectBoard {
+    /* width: 80vw; */
+    /* background-color: #3498db; */
+    margin: 40px 0px 0px 40px;
+    /* padding: 10px; */
+}
 
 .columnsContainer {
     display: flex;
+    /* justify-content: flex-start; */
+    /* height: auto; */
     gap: 25px;
 }
 
-.projectBoard {
-    padding: 10px;
-}
-
-h1 {
+/* h1 {
     text-align: left;
-}
+} */
 
-.navBar {
+/* .navBar {
     display: flex;
     align-items: center;
     gap: 100px;
-}
+} */
 
-button {
+.columnsContainer button {
+    /* height: min-content; */
+    width: 310px;
+    height: 33px;
+    /* width: 310px; */
+    /* padding: 10px; */
     font-size: 14pt;
     background-color: #3498db;
     border-radius: 3px;
@@ -26,9 +35,9 @@ button {
     color: white;
     /* width: 100% */
 }
-button:hover {
+.columnsContainer button:hover {
     background-color: #2879b0;
 }
-button:active {
+.columnsContainer button:active {
     border: black solid thin;
 }

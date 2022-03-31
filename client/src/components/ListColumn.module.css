@@ -1,6 +1,6 @@
-
 .listColumn {
     border: solid black medium;
+    width: 310px;
     border-radius: 3px;
     padding: 10px;
 }
