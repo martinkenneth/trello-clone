@@ -23,6 +23,7 @@ require("./config/mongoose.config")(DB);
 ===========================================================================*/
 // This will connect out routes
 require('./routes/Item.routes')(app);
+require('./routes/List.routes')(app);
 
 // Test to see if server is running upon setup...
 app.listen(PORT, () => console.log("The server is all fired up on port 8000"));

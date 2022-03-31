@@ -12,7 +12,7 @@ const ItemSchema = new mongoose.Schema({
         type: String,
         required: [true, 'List is required']
     }
-}, {timestamp: true});
+}, {timestamps: true});
 
 const Item = mongoose.model('Item', ItemSchema);
 module.exports = Item;
