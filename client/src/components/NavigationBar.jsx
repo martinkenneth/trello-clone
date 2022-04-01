@@ -10,7 +10,7 @@ function NavigationBar() {
                 <img src={menu} alt="menu-icon" />
             </div>
             <div className={style.navLeft}>
-                <h1>Project Title</h1>
+                <h1>Trella Board</h1>
                 <button>Recent</button>
                 <button>Templates</button>
                 <button>Create</button>
