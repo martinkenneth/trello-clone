@@ -4,7 +4,7 @@ import style from "./ProjectBoardView.module.css";
 import AddListForm from "../components/AddListForm";
 import EditOne from "./EditOne";
 import plus from "../assets/plus-icon.png";
-import axios from 'axios';
+import axios from "axios";
 
 const ProjectBoard = () => {
     const [addList, setAddList] = useState(false);
@@ -17,13 +17,14 @@ const ProjectBoard = () => {
     };
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/lists')
-            .then(res => {
-                console.log('getting the lists from the db');
+        axios
+            .get("http://localhost:8000/api/lists")
+            .then((res) => {
+                console.log("getting the lists from the db");
                 setLists(res.data.lists);
             })
-            .catch(err => console.error(err));
-    }, [])
+            .catch((err) => console.error(err));
+    }, [addList]);
 
     return (
         <div className={style.projectBoard}>

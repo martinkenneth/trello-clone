@@ -1,27 +1,28 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import style from "./AddListForm.module.css";
-import axios from 'axios';
+import axios from "axios";
 
 const AddListForm = (props) => {
-
-    const [title, setTitle] = useState('');
+    const [title, setTitle] = useState("");
     const [errors, setErrors] = useState([]);
 
     const handleSubmission = (e) => {
+        console.log("Submit!");
         e.preventDefault();
-        axios.post('http://localhost:8000/api/lists/new', {
-            title
-        })
-            .then(res => {
-                console.log('creating new list in db');
+        axios
+            .post("http://localhost:8000/api/lists/new", {
+                title,
+            })
+            .then((res) => {
+                console.log("creating new list in db");
                 props.setAddList(false);
             })
-            .catch(err => {
+            .catch((err) => {
                 console.error(err.response.data.errors);
                 const errorResponse = err.response.data.errors;
                 const errorArr = [];
                 for (const key of Object.keys(errorResponse)) {
-                    errorArr.push(errorResponse[key].message)
+                    errorArr.push(errorResponse[key].message);
                 }
                 setErrors(errorArr);
             });
@@ -33,7 +34,11 @@ const AddListForm = (props) => {
 
     return (
         <div className={style.AddListForm}>
-            {errors.map((err, idx) => <p key={idx} style={{color: 'red'}}>{err}</p>)}
+            {errors.map((err, idx) => (
+                <p key={idx} style={{ color: "red" }}>
+                    {err}
+                </p>
+            ))}
             <form onSubmit={handleSubmission}>
                 <input
                     type="text"
