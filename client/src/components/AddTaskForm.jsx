@@ -1,9 +1,32 @@
-import React from 'react'
+import React, {useState} from 'react'
+import axios from 'axios';
 
 const AddTaskForm = (props) => {
+
+    const {list} = props;
+    const [title, setTitle] = useState('');
+    const [errors, setErrors] = useState([]);
+
     const handleSubmission = (e) => {
         e.preventDefault();
-        props.setAddTask(false);
+        axios.post('http://localhost:8000/api/items/new', {
+            title,
+            description: '',
+            list
+        })
+            .then(res => {
+                console.log('creating a new item in the database')
+                setTitle('');
+            })
+            .catch(err => {
+                console.error(err.response.data.errors);
+                const errorResponse = err.response.data.errors;
+                const errorArr = [];
+                for (const key of Object.keys(errorResponse)) {
+                    errorArr.push(errorResponse[key].message)
+                }
+                setErrors(errorArr);
+            });
     }
     
     const handleCancel = () => {
@@ -12,7 +35,8 @@ const AddTaskForm = (props) => {
     return (
         <div>
             <form onSubmit={handleSubmission}>
-                <input type="text" name="title" id="title" placeholder='Enter a title for this task...'/>
+                {errors.map((err, idx) => <p key={idx} style={{color: 'red'}}>{err}</p>)}
+                <input type="text" name="title" id="title" onChange={(e) => setTitle(e.target.value)} placeholder='Enter a title for this task...'/>
                 <input type="submit" value="Add Task" />
                 <button onClick={() => handleCancel}>X</button>
             </form>

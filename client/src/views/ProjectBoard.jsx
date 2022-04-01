@@ -1,29 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ListColumn from "../components/ListColumn";
-import { projName, lists } from "../data/mock-data";
 import style from "./ProjectBoardView.module.css";
 import AddListForm from "../components/AddListForm";
 import EditOne from "./EditOne";
 import plus from "../assets/plus-icon.png";
+import axios from 'axios';
 
 const ProjectBoard = () => {
     const [addList, setAddList] = useState(false);
     const [showId, setShowId] = useState(-1);
 
+    const [lists, setLists] = useState([]);
+
     const handleAddList = () => {
         setAddList(true);
     };
 
-    //state var record idx or id
-    //axios
+    useEffect(() => {
+        axios.get('http://localhost:8000/api/lists')
+            .then(res => {
+                console.log('getting the lists from the db');
+                setLists(res.data.lists);
+            })
+            .catch(err => console.error(err));
+    }, [])
 
     return (
         <div className={style.projectBoard}>
             <div className={style.columnsContainer}>
-                {lists.map((list, idx) => {
+                {lists.map((list) => {
                     return (
                         <ListColumn
-                            key={idx}
+                            key={list._id}
                             listTitle={list.title}
                             setShowId={setShowId}
                         />
@@ -39,7 +47,7 @@ const ProjectBoard = () => {
                     </button>
                 )}
             </div>
-            {showId > -1 && <EditOne indexKey={showId} setShowId={setShowId} />}
+            {showId !== -1 && <EditOne showId={showId} setShowId={setShowId} />}
         </div>
     );
 };
