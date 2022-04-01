@@ -1,0 +1,39 @@
+.AddTaskForm div {
+    display: flex;
+}
+
+.AddTaskForm form {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    justify-content: space-between;
+}
+.AddTaskForm textarea {
+    width: 100%;
+    height: fit-content;
+    padding: 8px;
+    resize: none;
+}
+
+.AddTaskForm button {
+    cursor: pointer;
+    width: min-content;
+    padding: 0px 8px;
+    font-size: 16pt;
+    font-weight: 600;
+    border: none;
+    border-radius: 1.3rem;
+    background-color: white;
+    /* height: min-content;
+    width: 30px; */
+}
+
+.AddTaskForm button:first-of-type:hover {
+    /* font-weight: 900; */
+    /* background-color: #f25f5c; */
+}
+
+.AddTaskForm button:last-of-type:hover {
+    /* font-weight: 900; */
+    /* background-color: #85d689; */
+}

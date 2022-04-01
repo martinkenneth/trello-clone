@@ -1,0 +1,14 @@
+.item {
+    width: 100%;
+    border: lightgray solid thin;
+
+    border-radius: 3px;
+    padding: 8px;
+    margin: 10px 0px;
+    /* text-align: start; */
+    cursor: pointer;
+}
+.item:hover {
+    border: gray solid thin;
+    background-color: lightgray;
+}

@@ -1,14 +1,18 @@
 import "./App.css";
 import ProjectBoard from "./views/ProjectBoard";
+import NavigationBar from "./components/NavigationBar";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
 
     return (
         <div className="App">
-            <h1>Testing testing</h1>
-            <h2>trying this again</h2>
-            <ProjectBoard />
-            <h3>Ken adding a test</h3>
+            <Switch>
+                <Route path={"/"}>
+                    <NavigationBar />
+                    <ProjectBoard />
+                </Route>
+            </Switch>
         </div>
     );
 }

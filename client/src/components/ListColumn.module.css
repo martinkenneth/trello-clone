@@ -1,0 +1,48 @@
+.listColumn {
+    border: 2px solid black;
+    /* display: flex;
+    flex-direction: column; */
+    min-width: 310px;
+    max-width: 310px;
+    border-radius: 0.4rem;
+    padding: 15px;
+    /* background-color: aqua; */
+    box-shadow: 2px 2px 5px #a3a3a3;
+}
+
+.columnHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 0;
+}
+.columnHeader img {
+    cursor: pointer;
+    height: 30px;
+}
+.addButton {
+    display: flex;
+    align-items: flex-start;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+.addButton:hover {
+    background-color: lightgray;
+    border-radius: 3px;
+}
+
+.addButton:active {
+    background-color: gray;
+}
+
+.delete {
+    position: absolute;
+    cursor: pointer;
+    margin-top: 56px;
+    margin-left: 192px;
+    padding: 1px 20px;
+    border-radius: 0.3rem;
+    background-color: #f83434;
+    color: white;
+}

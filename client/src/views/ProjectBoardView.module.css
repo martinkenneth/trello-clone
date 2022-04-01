@@ -1,33 +1,44 @@
+.projectBoard {
+    width: max-content;
+    height: 90vw;
+    /* background-color: #3498db; */
+    margin: 90px 0px 0px 0px;
+    /* overflow-x: auto; */
+    /* padding: 10px; */
+}
 
 .columnsContainer {
     display: flex;
+    /* height: 100vw; */
+
+    /* overflow-y: hidden; */
+    padding: 30px 40px 40px 40px;
     gap: 25px;
 }
 
-.projectBoard {
-    padding: 10px;
-}
-
-h1 {
-    text-align: left;
-}
-
-.navBar {
+.columnsContainer > button {
+    cursor: pointer;
+    min-width: 310px;
+    height: 40px;
+    font-size: 14pt;
+    background-color: #ffffff;
+    font-weight: 500;
+    border-radius: 0.4rem;
+    border: 2px solid #2b2b2b;
+    color: #2b2b2b;
+    box-shadow: 2px 2px 5px #a3a3a3;
+    /* margin-right: 40px; */
     display: flex;
     align-items: center;
-    gap: 100px;
+    justify-content: center;
 }
 
-button {
-    font-size: 14pt;
-    background-color: #3498db;
-    border-radius: 3px;
-    border: none;
-    color: white;
+.columnsContainer > button:hover {
+    transition: 0.5s ease-in-out;
+    background-color: #85d689;
+    color: #2b2b2b;
 }
-button:hover {
-    background-color: #2879b0;
-}
-button:active {
-    border: black solid thin;
+
+.columnsContainer > button img {
+    width: 30px;
 }
