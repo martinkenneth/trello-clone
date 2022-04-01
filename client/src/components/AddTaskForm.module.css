@@ -1,17 +1,24 @@
+.AddTaskForm div {
+    display: flex;
+}
+
 .AddTaskForm form {
     display: flex;
+    flex-direction: column;
     width: auto;
     justify-content: space-between;
 }
-.AddTaskForm input[type="text"] {
+.AddTaskForm textarea {
     width: 100%;
-    padding: 5px 10px;
+    height: fit-content;
+    padding: 8px;
+    resize: none;
 }
 
 .AddTaskForm button {
     cursor: pointer;
     width: min-content;
-    padding: 5px 14px;
+    padding: 0px 8px;
     font-size: 16pt;
     font-weight: 600;
     border: none;

@@ -9,6 +9,7 @@ import axios from "axios";
 
 const ProjectBoard = () => {
     const [addList, setAddList] = useState(false);
+    const [del, setDel] = useState(false);
     const [showId, setShowId] = useState(-1);
     const [lists, setLists] = useState([]);
 
@@ -19,6 +20,7 @@ const ProjectBoard = () => {
     };
 
     useEffect(() => {
+        console.log(addList);
         axios
             .get("http://localhost:8000/api/lists")
             .then((res) => {
@@ -27,7 +29,7 @@ const ProjectBoard = () => {
                 setLists(res.data.lists);
             })
             .catch((err) => console.error(err));
-    }, [addList, showId]);
+    }, [addList, del]);
 
     return (
         <div className={style.projectBoard}>
@@ -38,7 +40,9 @@ const ProjectBoard = () => {
                         <ListColumn
                             key={list._id}
                             listTitle={list.title}
-                            showId={showId}
+                            listId={list._id}
+                            del={del}
+                            setDel={setDel}
                             setShowId={setShowId}
                         />
                     );
