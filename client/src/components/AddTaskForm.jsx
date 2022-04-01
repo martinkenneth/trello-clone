@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import style from "./AddTaskForm.module.css";
 
 const AddTaskForm = (props) => {
     const { list } = props;
@@ -35,7 +36,7 @@ const AddTaskForm = (props) => {
         props.setAddTask(false);
     };
     return (
-        <div>
+        <div className={style.AddTaskForm}>
             <form onSubmit={handleSubmission}>
                 {errors.map((err, idx) => (
                     <p key={idx} style={{ color: "red" }}>
@@ -49,9 +50,11 @@ const AddTaskForm = (props) => {
                     onChange={(e) => setTitle(e.target.value)}
                     placeholder="Enter a title for this task..."
                 />
-                <input type="submit" value="Add Task" />
+                <button onClick={handleCancel}>-</button>
+                <button type="submit">+</button>
+                {/* <input type="submit" value="Add Task" />
+                <button onClick={handleCancel}>X</button> */}
             </form>
-            <button onClick={handleCancel}>X</button>
         </div>
     );
 };
