@@ -3,7 +3,7 @@ import style from "./ListColumn.module.css";
 import Item from "./Item";
 import AddTaskForm from "./AddTaskForm";
 import moreIcon from "../assets/more-icon.png";
-import axios from 'axios';
+import axios from "axios";
 
 const ListColumn = (props) => {
     const { listTitle, setShowId } = props;
@@ -20,20 +20,21 @@ const ListColumn = (props) => {
     };
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/items')
-            .then(res => {
-                console.log('getting all items from db');
+        axios
+            .get("http://localhost:8000/api/items")
+            .then((res) => {
+                console.log("getting all items from db");
                 setItems(res.data.items);
             })
-            .catch(err => console.error(err));
-    }, [])
+            .catch((err) => console.error(err));
+    }, [addTask]);
 
     return (
         <div>
             <div className={style.listColumn}>
                 <div className={style.columnHeader}>
                     <h3>{listTitle}</h3>
-                    <img src={moreIcon} alt=''/>
+                    <img src={moreIcon} alt="" />
                 </div>
                 {items
                     .filter((oneItem) => oneItem.list === listTitle)
