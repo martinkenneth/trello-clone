@@ -6,7 +6,7 @@ import moreIcon from "../assets/more-icon.png";
 import axios from "axios";
 
 const ListColumn = (props) => {
-    const { listTitle, listId, setShowId, del, setDel } = props;
+    const { listTitle, listId, setShowId, del, setDel, showId } = props;
     const [addTask, setAddTask] = useState(false);
     const [editToggle, setEditToggle] = useState(false);
     const [items, setItems] = useState([]);
@@ -44,7 +44,7 @@ const ListColumn = (props) => {
                 setItems(res.data.items);
             })
             .catch((err) => console.error(err));
-    }, [addTask]);
+    }, [addTask, showId]);
 
     return (
         <div>

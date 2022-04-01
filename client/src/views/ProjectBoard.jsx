@@ -43,6 +43,7 @@ const ProjectBoard = () => {
                             listTitle={list.title}
                             listId={list._id}
                             del={del}
+                            showId={showId} 
                             setDel={setDel}
                             setShowId={setShowId}
                             setUpdate={setUpdate}
