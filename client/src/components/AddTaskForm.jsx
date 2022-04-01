@@ -43,15 +43,17 @@ const AddTaskForm = (props) => {
                         {err}
                     </p>
                 ))}
-                <input
-                    type="text"
-                    name="title"
-                    id="title"
-                    onChange={(e) => setTitle(e.target.value)}
-                    placeholder="Enter a title for this task..."
-                />
-                <button onClick={handleCancel}>-</button>
-                <button type="submit">+</button>
+                <div>
+                    <textarea
+                        type="text"
+                        name="title"
+                        id="title"
+                        onChange={(e) => setTitle(e.target.value)}
+                        placeholder="Enter a title for this task..."
+                    />
+                    <button onClick={handleCancel}>-</button>
+                    <button type="submit">+</button>
+                </div>
                 {/* <input type="submit" value="Add Task" />
                 <button onClick={handleCancel}>X</button> */}
             </form>

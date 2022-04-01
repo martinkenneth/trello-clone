@@ -14,6 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 3px 0;
 }
 .columnHeader img {
     cursor: pointer;
@@ -33,4 +34,15 @@
 
 .addButton:active {
     background-color: gray;
+}
+
+.delete {
+    position: absolute;
+    cursor: pointer;
+    margin-top: 56px;
+    margin-left: 192px;
+    padding: 1px 20px;
+    border-radius: 0.3rem;
+    background-color: #f83434;
+    color: white;
 }

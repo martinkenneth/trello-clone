@@ -63,6 +63,19 @@ const EditOne = (props) => {
             });
     };
 
+    const handleDelete = (e) => {
+        e.preventDefault();
+        console.log("delete", showId);
+        axios
+            .delete("http://localhost:8000/api/items/delete/" + showId)
+            .then((res) => {
+                console.log("item deleted");
+                setShowId(-1);
+                //history.push isn't working to rerender the project board to show the edits
+                history.push("/");
+            });
+    };
+
     return (
         <div className={style.modalBackground}>
             <div className={style.modalContainer}>
@@ -98,7 +111,7 @@ const EditOne = (props) => {
                         </select>
                     </div>
                     <div className={style.inputDiv}>
-                        <label htmlFor="title">Title: </label>
+                        <label>Title: </label>
                         <input
                             type="text"
                             name="title"
@@ -108,7 +121,7 @@ const EditOne = (props) => {
                         />
                     </div>
                     <div className={style.inputDiv}>
-                        <label htmlFor="description">Description: </label>
+                        <label>Description: </label>
                         <textarea
                             name="description"
                             id="description"
@@ -119,7 +132,11 @@ const EditOne = (props) => {
                         />
                     </div>
                     {/* <button onClick={() => setShowId(-1)}>Cancel</button> */}
-                    <input type="submit" value="Save" />
+                    <div className={style.btnContainer}>
+                        <button onClick={handleDelete}>Delete</button>
+                        <button type="submit">Save</button>
+                    </div>
+                    {/* <input type="submit" value="Save" /> */}
                 </form>
             </div>
         </div>
