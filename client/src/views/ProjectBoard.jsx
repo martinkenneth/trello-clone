@@ -10,6 +10,7 @@ import axios from "axios";
 const ProjectBoard = () => {
     const [addList, setAddList] = useState(false);
     const [del, setDel] = useState(false);
+    const [update, setUpdate] = useState(false);
     const [showId, setShowId] = useState(-1);
     const [lists, setLists] = useState([]);
 
@@ -25,11 +26,11 @@ const ProjectBoard = () => {
             .get("http://localhost:8000/api/lists")
             .then((res) => {
                 console.log("getting the lists from the db");
-                // console.log(showId);
+                console.log(showId);
                 setLists(res.data.lists);
             })
             .catch((err) => console.error(err));
-    }, [addList, del]);
+    }, [addList, showId, del, update]);
 
     return (
         <div className={style.projectBoard}>
@@ -44,10 +45,11 @@ const ProjectBoard = () => {
                             del={del}
                             setDel={setDel}
                             setShowId={setShowId}
+                            setUpdate={setUpdate}
+                            update={update}
                         />
                     );
                 })}
-
                 {addList ? (
                     <AddListForm setAddList={setAddList} />
                 ) : (

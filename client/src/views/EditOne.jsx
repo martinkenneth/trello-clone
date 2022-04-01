@@ -48,9 +48,10 @@ const EditOne = (props) => {
             })
             .then((res) => {
                 console.log("updating an item in the db");
+                console.log("showID", showId);
                 setShowId(-1);
                 //history.push isn't working to rerender the project board to show the edits
-                history.push("/");
+                // history.push("/");
             })
             .catch((err) => {
                 console.error(err.response.data.errors);
@@ -69,8 +70,8 @@ const EditOne = (props) => {
         axios
             .delete("http://localhost:8000/api/items/delete/" + showId)
             .then((res) => {
-                console.log("item deleted");
                 setShowId(-1);
+                console.log("item deleted");
                 //history.push isn't working to rerender the project board to show the edits
                 history.push("/");
             });
