@@ -48,9 +48,9 @@ const AddListForm = (props) => {
                     onChange={(e) => setTitle(e.target.value)}
                 />
                 {/* <input type="submit" value="Add List" /> */}
+                <button onClick={handleCancel}>-</button>
                 <button type="submit">+</button>
             </form>
-            <button onClick={() => handleCancel}>-</button>
         </div>
     );
 };

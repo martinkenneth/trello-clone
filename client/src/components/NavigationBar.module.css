@@ -1,5 +1,9 @@
 .NavigationBar {
+    width: 100%;
+    /* overflow-x: hidden; */
+    background-color: white;
     display: flex;
+    position: fixed;
     align-items: center;
     padding: 14px 22px 14px 22px;
     box-shadow: 0px -5px 10px #2b2b2b;
